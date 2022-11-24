@@ -1,13 +1,169 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.main{
+	color: #000000;
+	padding: 60px; 
+	margin:0 auto; 
+	text-align:center;
+	font-family: 'Playfair Display', serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+#navMain {
+	position: fixed;
+	top: 0;
+	z-index: 9;
+  width: 100%;
+  margin: 0 auto;
+	font-family:'Oswald', sans-serif; 
+}
+#navMain ul,
+#navMain li,
+#navMain a {
+  position: relative;
+  list-style:none;
+  text-decoration: none;
+}
+#navMain ul li a {
+  display: block;
+  color: #d7e3dd;
+  padding: 10px 10px;
+  position: relative;
+}
+
+#navMain > ul {
+  position: relative;
+  margin: 0 auto;
+}
+#navMain > ul > li > a {
+  height:100%;
+  background: #3f9094;
+}
+
+#navMain li > a:hover,
+#navMain li > a:focus {
+  background: #51bbc1 !important;
+}
+
+#navMain .hasSub:after {
+  position: absolute;
+  content: "\25BC";
+  display: block;
+  font-size: 0.7em;
+  color: #fff;
+  top: 14px;
+  right: 10px;
+  cursor: pointer;
+
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+#navMain .hasSub.open:after {
+  transform: rotate(180deg);
+  transition: transform 0.5s;
+}
+
+.number_shop{
+	background-color: red;
+	color: #ffffff;
+	border-radius: 100%;
+	padding: 4px 8px;
+	font-size: 12px;
+}
+
+#cart_{
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #928C90;
+	font-size: 20px;
+}
+
+.empty_cart{
+	font-family: 'Antic Didone', serif;
+	font-size: 18px;
+	background-color: #ffffff;
+	color: #C79C96;
+	border: #C79C96 1px solid;
+	padding: 8px 40px;
+	border-radius: 50px;
+}
+
+.empty_cart:hover{
+	background-color: #C79C96;
+	color: #ffffff;
+}
+
+
+/* Menu (responsive) */
+#menuBurger {
+  display: none; 
+}
+#menuBurger ~ label {
+  display: none;
+  z-index:2;
+  position:absolute;
+  right:0;
+  top:0;
+  cursor: pointer;
+  vertical-align: top;
+  background: #F5EBEA;
+  width: 38px;
+  height: 38px;
+}
+#menuBurger ~ label::before {
+  content: "";
+  margin: 6px auto;
+  width: 24px;
+  height: 5px;
+  background: #1f1f1f;
+  box-shadow: 0 10px 0 0 #1f1f1f, 0 20px 0 0 #1f1f1f;
+}
+#menuBurger ~ label::after {
+  display: none;
+  content: "\2716"; 
+  font-weight: 900;
+  margin: auto;
+  font-size: 26px;
+  color: #1f1f1f
+}
+#menuBurger:checked ~ label::after {
+  display: block;
+}
+#menuBurger:checked ~ label::before {
+  display: none;
+}
+ol, ul {
+  padding-left: 0;
+}
+
+
+@media screen and (max-width: 767px) {
+  /* menu vertical */
+  #navMain > ul {
+    width: 100%;
+    display:none; 
+    
+  }
+  #menuBurger ~ label {
+    display: inline-flex;
+  }
+  #menuBurger:checked ~ ul {
+    display:block;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+@media screen and (min-width: 768px) {
+  /* menu horizontal */
+  #navMain > ul {
+    display: flex;
+    flex-wrap:nowrap;
+  }
+  #navMain > ul > li {
+    flex: 1 1 25%;
+  }
+  #navMain > ul > li > ul {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
 }
