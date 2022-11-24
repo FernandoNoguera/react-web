@@ -167,3 +167,24 @@ ol, ul {
     z-index: 1;
   }
 }
+
+.item_card {
+	width: 100%;
+}
+
+.price_tag{
+	font-family: 'Antic Didone', serif;
+	font-size: 16px;
+	background-color: #3f9094;
+	border: #3f9094 1px solid;
+	color: #ffffff;
+	padding: 8px 70px;
+	border-radius: 50px;
+}
+
+.price_tag:hover{
+	background-color: #ffffff;
+	color: #3f9094;
+	border: #3f9094 1px solid;
+	padding: 8px 70px;
+}
