@@ -7,25 +7,19 @@ function NavLink () {
     return (
         <ul>
             <NavItem
-            href="localhost:3000/"
+            to="/"
             text="INICIO"
             />
             <NavItem
-            href="localhost:3000/"
-            text="CATEGORIA 1"
+            to="/materiales"
+            text="MATERIALES"
             />
             <NavItem
-            href="localhost:3000/"
-            text="CATEGORIA 2"
+            to="/herramientas"
+            text="HERRAMIENTAS"
             />
             <NavItem
-            href="localhost:3000/"
-            text="CATEGORIA 3"
-            />
-            
-            <NavItem
-        
-            href="localhost:3000/"
+            to="/"
             icon = {
                 <ShoppingCartOutlined 
                     style={{ fontSize: '25px', paddingRight:10 }}    

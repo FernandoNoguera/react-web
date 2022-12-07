@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom'
+
 function NavItem({...props}){
     return (
         <li className="border-right">
-            <a href={props.href}>
-            {props.icon} {props.text} {props.children}
-            </a>
+            <Link to={props.to}>
+                <spam>
+                    {props.icon} {props.text} {props.children}
+                </spam>
+            </Link>
         </li>
     );
 }
