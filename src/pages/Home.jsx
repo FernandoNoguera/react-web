@@ -5,5 +5,4 @@ function Home (){
         <ItemListContainer/>
     )
 }
-
-export default Home
+export default Home 

@@ -4,9 +4,9 @@ function NavItem({...props}){
     return (
         <li className="border-right">
             <Link to={props.to}>
-                <spam>
+                <span>
                     {props.icon} {props.text} {props.children}
-                </spam>
+                </span>
             </Link>
         </li>
     );

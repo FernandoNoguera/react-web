@@ -1,5 +1,6 @@
 import NavLink from "./header/NavLink"
 
+
 function NavBar () {
     return (
         <nav id="navMain" className="text-center">

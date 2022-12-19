@@ -11,15 +11,15 @@ function NavLink () {
             text="INICIO"
             />
             <NavItem
-            to="/materiales"
-            text="MATERIALES"
+            to="/smartphones"
+            text="SMARTPHONES"
             />
             <NavItem
-            to="/herramientas"
-            text="HERRAMIENTAS"
+            to="/laptops"
+            text="LAPTOPS"
             />
             <NavItem
-            to="/"
+            to="carrito"
             icon = {
                 <ShoppingCartOutlined 
                     style={{ fontSize: '25px', paddingRight:10 }}    
