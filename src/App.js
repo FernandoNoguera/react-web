@@ -13,6 +13,7 @@ import {
   Link
 } from 'react-router-dom'
 import ProductDetail from './pages/ProductDetail';
+import CategoryProducts from './pages/CategoryProducts';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route exact path='/laptops' element={<Laptops/>} />
         <Route exact path='/detalle/:id' element={<ProductDetail/>} />
         <Route exact path='/carrito' element={<Cart/>} />
+        <Route exact path='/category/:name' element={<CategoryProducts/>} />
       </Routes>
     </BrowserRouter>
   );

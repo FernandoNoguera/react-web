@@ -3,6 +3,7 @@ import ItemCard from "./ItemCards";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../Loader/Loader";
+import { Link } from "react-router-dom";
 
 
 function ItemListContainer () {
@@ -44,16 +45,21 @@ function ItemListContainer () {
                 <div className="row">
                 <div className="col-md-2">
                     <div className="row">
-                    <ul className="list-group">
-                        { loading2 ? <Loader/> :
-                            <>
-                                {listData.map(el => (
-                                    <li className="list-group-item">{el}</li>
-                                ))}
-                            </>
-                        }
-            
-                    </ul>     
+                        <ul className="list-group">
+                            { loading2 ? <Loader/> :
+                                <>
+                                    {listData.map(el => (
+                                        <Link
+                                            className="list-group-item"
+                                            to={`category/${el}`}
+                                            category={el}
+                                        >{el}</Link>
+                                        
+                                    ))}
+                                </>
+                            }
+                
+                        </ul>     
                     </div>
                 </div>
                 <div className="col-md-10">
