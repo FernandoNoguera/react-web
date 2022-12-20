@@ -44,11 +44,11 @@ function ItemListContainer () {
                 <div className="row">
                 <div className="col-md-2">
                     <div className="row">
-                    <ul class="list-group">
+                    <ul className="list-group">
                         { loading2 ? <Loader/> :
                             <>
                                 {listData.map(el => (
-                                    <li class="list-group-item">{el}</li>
+                                    <li className="list-group-item">{el}</li>
                                 ))}
                             </>
                         }
