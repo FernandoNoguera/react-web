@@ -2,11 +2,13 @@ import ItemCard from "../ItemListContainer/ItemCards";
 // import DefaultImg from '../../assets/images/default/notFound.png';
 import React, { useEffect , useState } from "react";
 import axios from "axios";
+import Loader from "../Loader/Loader";
 
 
 
 function ItemListContainerFilter (props) {
     const localCategory = props.category;
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     useEffect( () => {
         const instance = axios.create({
@@ -17,7 +19,8 @@ function ItemListContainerFilter (props) {
         instance.get(`products/category/${localCategory}`)
             .then(
                 (data) => {
-                setData(data?.data?.products)
+                setData(data?.data?.products);
+                setLoading(false);
             }
             ).catch((error) => {
             }) 
@@ -29,7 +32,7 @@ function ItemListContainerFilter (props) {
             <div className="container">
                 <div className="col-md-12">
                     <div className="row">
-                        {data.length > 0 && (
+                        { loading ? <Loader/> :
                             <>
                                 {data.map(product => (
                                     <ItemCard
@@ -41,7 +44,7 @@ function ItemListContainerFilter (props) {
                                 />
                                 ))}
                             </>
-                        )}        
+                        }     
                     </div>
                 </div>
             </div>

@@ -2,11 +2,14 @@ import ItemCard from "./ItemCards";
 // import DefaultImg from '../../assets/images/default/notFound.png';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../Loader/Loader";
 
 
 function ItemListContainer () {
     const [data, setData] = useState([])
     const [listData, setListData] = useState([])
+    const [loading, setLoading] = useState(true);
+    const [loading2, setLoading2] = useState(true);
     useEffect( () => {
         const instance = axios.create({
             baseURL: 'https://dummyjson.com/',
@@ -17,7 +20,8 @@ function ItemListContainer () {
         .then(
     
             (data) => {
-            setData(data.data.products)
+            setData(data.data.products);
+            setLoading(false);
         }
         ).catch((error) => {
             console.log(error);
@@ -26,6 +30,7 @@ function ItemListContainer () {
         .then(
             (data) => {
             setListData(data.data)
+            setLoading2(false);
         }
         ).catch((error) => {
             console.log(error);
@@ -40,19 +45,20 @@ function ItemListContainer () {
                 <div className="col-md-2">
                     <div className="row">
                     <ul class="list-group">
-                        {listData.length > 0 && (
+                        { loading2 ? <Loader/> :
                             <>
                                 {listData.map(el => (
                                     <li class="list-group-item">{el}</li>
                                 ))}
                             </>
-                        )} 
+                        }
+            
                     </ul>     
                     </div>
                 </div>
                 <div className="col-md-10">
                     <div className="row">
-                        {data.length > 0 && (
+                        { loading ? <Loader/> : 
                             <>
                                 {data.map(product => (
                                     <ItemCard
@@ -64,7 +70,7 @@ function ItemListContainer () {
                                 />
                                 ))}
                             </>
-                        )}        
+                        }       
                     </div>
                 </div>
 

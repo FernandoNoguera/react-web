@@ -1,3 +1,4 @@
+
 .main{
 	color: #000000;
 	padding: 60px; 
@@ -391,3 +392,11 @@ ol, ul {
   .shopping-cart .def-number-input.number-input button.plus:after {
   background-color: #4285f4;
   }
+
+
+  .loader{
+    width: 10%;
+    margin: auto;
+    display: block;
+  }
+  
